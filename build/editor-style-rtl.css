@@ -1,0 +1,8 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/@wordpress/scripts/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/css/editor.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/* Ausnahme: wenn Galerie noch Platzhalter anzeigt → Text statisch darunter */
+.block-editor-block-list__block .wp-block-gallery:has(.components-placeholder) + .content .teaser-text-container {
+  visibility: hidden;
+}

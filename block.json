@@ -1,0 +1,29 @@
+{
+    "apiVersion": 2,
+    "name": "ud/content-for-loop-block",
+    "title": "Inhalt für Loop",
+    "category": "layout",
+    "icon": "receipt",
+    "description": "Universeller Inhaltsblock für Schleifenanzeigen wie News, Veranstaltungen, Unterseiten etc.",
+    "editorStyle": "file:./build/editor-style.css",
+    "style": "file:./build/frontend-style.css",
+    "editorScript": "file:./build/editor-script.js",
+    "script": "file:./build/frontend-script.js",
+    "supports": {
+        "html": false,
+        "anchor": false,
+        "customClassName": true
+    },
+    "postTypes": [
+        "ud_news",
+        "ud_veranstaltungen",
+        "ud_bildungsangebote",
+        "page"
+    ],
+    "attributes": {
+        "contentType": {
+            "type": "string",
+            "default": ""
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.slick-slider {
+  position: relative;
+}
+.slick-slider .slick-list {
+  width: 100%;
+}
+
+.slick-prev,
+.slick-next {
+  all: unset;
+  position: absolute;
+  top: calc(50% + 1.44rem / 2);
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slick-prev {
+  left: 1.44rem;
+}
+
+.slick-next {
+  right: 1.44rem;
+}
+
+.slick-icon {
+  width: calc(1.44rem + 0px);
+  height: calc(1.44rem + 0px);
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  border: 2px solid black;
+}
+.slick-icon:hover {
+  transform: scale(1.1);
+}
+
+.slick-icon i {
+  font-size: 1.44rem;
+}/*# sourceMappingURL=slick-theme-for-ud.css.map */

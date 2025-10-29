@@ -1,0 +1,227 @@
+/* =============================================================== *\
+   Content-for-Loop Block
+   - Einheitlicher Block für Veranstaltungen, News, Unterseiten etc.
+   - Steuert Darstellung über .is-content-type-[slug]
+\* =============================================================== */
+@use "libs/slick/slick";
+@use "libs/slick/slick-theme-for-ud";
+
+.wp-block-ud-content-for-loop-block {
+	position: relative;
+	padding: calc(var(--kachel-padding-x, 25px) / 2);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	background-color: white;
+	margin: 1rem 0;
+
+	// Gemeinsames Bild-Styling
+	figure.wp-block-gallery,
+	figure.wp-block-image {
+		margin-left: calc(var(--kachel-padding-x, 25px) * -1);
+		margin-right: calc(var(--kachel-padding-x, 25px) * -1);
+		margin-top: calc(var(--kachel-padding-x, 25px) * -1);
+		margin-bottom: calc(var(--kachel-padding-x, 25px) * 1);
+		border-top-left-radius: var(--border-radius, 16px);
+		border-top-right-radius: var(--border-radius, 16px);
+		overflow: hidden;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			aspect-ratio: 16 / 9;
+		}
+		&.is-empty {
+			display: none;
+		}
+	}
+
+	.meta-row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.meta {
+		font-size: 1rem;
+	}
+
+	.main-heading {
+		margin: 0.5em 0;
+	}
+
+	.berufsbezeichnung {
+		margin-top: 0.125rem;
+	}
+
+	.ausbildungsdauer {
+		display: inline-block;
+		border: 1px solid black;
+		line-height: 1rem;
+		padding: 4px 8px;
+		border-radius: 100px;
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+	}
+
+	// Accordion-Styling innerhalb des Blocks
+	.wp-block-ud-accordion-block {
+		color: inherit;
+		background-color: inherit;
+		padding: 1rem 0 0;
+
+		&.is-open {
+			margin-bottom: 0em;
+		}
+
+		.ud-accordion__toggle.wp-block-heading {
+			font-weight: 500;
+		}
+	}
+
+	.is-style-readmore_single .wp-block-button__link {
+		background: transparent;
+		color: inherit;
+	}
+}
+
+/* =============================================================== *\
+   Childpage + Bildungsangebote
+\* =============================================================== */
+.wp-block-ud-content-for-loop-block.is-content-type-childpage,
+.wp-block-ud-content-for-loop-block.is-content-type-ud_bildungsangebote {
+	.block-list-appender {
+		display: none;
+	}
+
+	figure {
+		margin-bottom: calc(var(--kachel-padding-x) * -0.5);
+		display: block !important;
+
+		@media screen and (max-width: 1100px) {
+			margin-bottom: 0;
+		}
+	}
+
+	.teaser-text-container {
+		position: absolute;
+		left: 0;
+		max-width: 560px;
+		background-color: white;
+		filter: drop-shadow(var(--shadow-strong));
+		font-size: clamp(18px, 2.5vw, 24px);
+		font-weight: 600;
+		line-height: 1.3em;
+		border-radius: calc(var(--border-radius) * 2);
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		bottom: 13%;
+		padding: 0.88rem;
+		padding-right: 1.44rem;
+		padding-left: 1.44rem;
+	}
+
+	@media screen and (max-width: 1100px) {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		//padding: calc(var(--kachel-padding-x) / 2);
+		padding: 0;
+		.teaser-text-container {
+			position: relative;
+			bottom: unset;
+			left: unset;
+			max-width: unset;
+			//border-top-left-radius: 0;
+			//border-top-right-radius: 0;
+			border-radius: 0;
+		}
+	}
+}
+
+/* =============================================================== *\
+   Ausbildungsangebote
+\* =============================================================== */
+.wp-block-ud-content-for-loop-block.is-content-type-ud_bildungsangebote
+	h2.berufsbezeichnung {
+	font-size: 2.44rem;
+	line-height: 2.44rem;
+	margin: 0;
+}
+/* =============================================================== *\
+   Veranstaltung
+\* =============================================================== */
+.wp-block-ud-content-for-loop-block.is-content-type-ud_veranstaltungen {
+	.meta-row {
+		.wp-block-ud-datetime-block,
+		p {
+			flex-grow: 1;
+			flex-basis: 50%;
+		}
+		p {
+			text-align: right;
+		}
+	}
+}
+
+/* =============================================================== *\
+   Date-Time
+\* =============================================================== */
+.wp-block-ud-content-for-loop-block.is-content-type-datetime {
+	font-size: 1rem;
+	padding: 0.44rem 0.8rem;
+	@media screen and (max-width: 1000px) {
+		flex-direction: column;
+	}
+
+	> p {
+		font-weight: bold;
+	}
+	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+
+		.meta {
+			font-size: 1em;
+			line-height: 1em;
+			flex-shrink: 0;
+		}
+		.text {
+			font-size: 1em;
+			line-height: 1em;
+			flex-grow: 2;
+			padding-left: 2rem;
+			margin-bottom: 0.25rem;
+			@media screen and (max-width: 600px) {
+				flex-basis: 100%;
+			}
+		}
+		.wp-block-ud-link-block {
+			justify-self: flex-end;
+
+			.ud-link-block {
+				padding: 0;
+				flex-direction: row;
+				gap: 0.5em;
+
+				.ud-link-block__title {
+					font-size: 1em;
+					line-height: 1em;
+					font-weight: 500;
+					margin: 0;
+				}
+				.ud-link-block__icon {
+					width: 0.8em;
+					height: 0.8em;
+					.ud-link-block__link-icon {
+						height: 0.8em;
+						width: auto;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}

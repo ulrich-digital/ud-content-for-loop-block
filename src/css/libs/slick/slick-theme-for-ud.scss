@@ -1,0 +1,46 @@
+$icon-size: 1.44rem;
+
+.slick-slider {
+	position: relative;
+	.slick-list {
+		width: 100%;
+	}
+}
+
+.slick-prev,
+.slick-next {
+	all: unset;
+	position: absolute;
+	top: calc(50% + #{$icon-size} / 2);
+	transform: translateY(-50%);
+	cursor: pointer;
+	z-index: 10;
+}
+
+.slick-prev {
+	left: $icon-size;
+}
+
+.slick-next {
+	right: $icon-size;
+}
+
+.slick-icon {
+	width: calc($icon-size + 0px);
+	height: calc($icon-size + 0px);
+	background: #ffffff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.2s ease;
+    border: 2px solid black;
+	// optional:
+    &:hover {
+		transform: scale(1.1);
+	}
+}
+
+.slick-icon i {
+	font-size: 1.44rem;
+}
