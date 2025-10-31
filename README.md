@@ -1,6 +1,6 @@
-# Inhalt für Loops
+# UD Block: Content for Loop
 
-**Ein universeller Block für die Darstellung von geloopten Inhalten wie News, Veranstaltungen, Unterseiten oder Datumsanzeigen.**
+Ein universeller Block für die Darstellung von geloopten Inhalten wie News, Veranstaltungen, Unterseiten oder Datumsanzeigen.
 
 
 ## Funktionsweise
