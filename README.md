@@ -8,6 +8,8 @@
 Der Block dient als konsolidierter Anzeige-Container für verschiedene Inhaltstypen. Je nach gewähltem Typ (z. B. `news`, `ud_veranstaltungen`, `childpage`, `datetime`) wird ein spezifisches Template geladen. Dieses kann direkt im Editor bearbeitet und erweitert werden.
 
 
+
+
 ## Aufbau und Verhalten
 
 Der Block ist modular konzipiert:
