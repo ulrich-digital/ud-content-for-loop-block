@@ -15,7 +15,6 @@ Der Block ist modular konzipiert:
 - **Templates** für verschiedene Inhaltstypen sind vordefiniert, aber nicht gesperrt.
 - Inhalte wie `ud_news` oder `ud_veranstaltungen` können automatisch beim Anlegen mit dem passenden Layout bestückt werden.
 - **Inspector Controls** ermöglichen die manuelle Auswahl des Inhaltstyps.
-- Die Platzhalterbilder werden direkt aus dem Plugin-Verzeichnis geladen.
 
 
 ## Technische Besonderheiten
@@ -26,32 +25,28 @@ Der Block ist modular konzipiert:
 - Styling erfolgt scoped über `.wp-block-ud-loop-content` sowie `.is-content-type-*`.
 
 
-## Styling
 
-Der Block bringt nur lokales, block-spezifisches CSS mit. Alle Layout-Regeln sind:
+## Abhängigkeiten 
 
-- gezielt auf `.wp-block-ud-loop-content` eingeschränkt
-- auf den Inhaltstyp (via `.is-content-type-*`) ausrichtbar
-- für Bild- und Textelemente vorbereitet (z. B. `.teaser-text-container`, `.main-heading`)
-
-
-## Abhängigkeiten (optional)
-
-Der Block nutzt ggf. folgende externe Blöcke (Plugins erforderlich):
+Der Block ist kompatibel mit folgenden UD-Blöcken und kann deren Inhalte automatisch verarbeiten:
 
 - `ud/datetime-block`
 - `ud/accordion-block`
 - `ud/link-block`
 
-Fehlende Blöcke werden abgefangen – der Editor bleibt funktional.
+Sind diese Blöcke nicht installiert, bleibt der Editor vollständig funktionsfähig – die entsprechenden Funktionen werden einfach übersprungen.
 
 
-## Entwickler:innen
+## Autor
 
-- **Block-Name:** `ud/content-for-loop-block`
-- **Editor-Klasse:** `wp-block-ud-loop-content`
-- **Pfad zum Plugin:** `wp-content/plugins/ud-content-for-loop-block/`
+[ulrich.digital gmbh](https://ulrich.digital)
 
-Der Block ist ein eigenständiges Plugin und kann unabhängig von anderen Loop-Strukturen eingesetzt werden.
+
+## Lizenz
+
+GPL v2 or later
+[https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
+
+
 
 
