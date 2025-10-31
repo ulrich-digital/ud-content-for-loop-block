@@ -8,6 +8,15 @@
 Der Block dient als konsolidierter Anzeige-Container für verschiedene Inhaltstypen. Je nach gewähltem Typ (z. B. `news`, `ud_veranstaltungen`, `childpage`, `datetime`) wird ein spezifisches Template geladen. Dieses kann direkt im Editor bearbeitet und erweitert werden.
 
 
+## Screenshots
+
+![Frontend-Ansicht](./assets/ud-content-for-loop-block.png)
+*Eingabefelder für Bilder, Text und Kontaktdaten.*
+
+
+![Editor-Ansicht](./assets/ud-wohnung-block.png)
+*Darstellung einer Wohnungskarte im Frontend.*
+
 ## Aufbau und Verhalten
 
 Der Block ist modular konzipiert:
