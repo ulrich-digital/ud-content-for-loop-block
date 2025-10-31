@@ -11,11 +11,9 @@ Der Block dient als konsolidierter Anzeige-Container für verschiedene Inhaltsty
 ## Screenshots
 
 ![Frontend-Ansicht](./assets/ud-content-for-loop-block.png)
-*Eingabefelder für Bilder, Text und Kontaktdaten.*
+*Der Content for Loop Block in der Editor Ansicht.*
 
 
-![Editor-Ansicht](./assets/ud-wohnung-block.png)
-*Darstellung einer Wohnungskarte im Frontend.*
 
 ## Aufbau und Verhalten
 
